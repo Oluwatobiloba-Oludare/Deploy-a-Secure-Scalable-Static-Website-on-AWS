@@ -2,7 +2,6 @@
 # **Deploying a Secure & Scalable Static Website on AWS**
 
 ![Alt text](Html-architecture.png)
-
 ---
 # **Deploying a Secure & Scalable Static Website on AWS**
 ## **📌 Project Summary**
@@ -13,7 +12,7 @@ The solution reflects real-world DevOps practices by combining modern cloud infr
 This project demonstrates my ability to architect cloud solutions, automate deployments, and implement best practices across networking, compute, storage, DNS, security, and load balancing services.
 
 
-# ** Architecture Overview**
+# Architecture Overview
 
 I implemented a **tiered network architecture** within a custom Virtual Private Cloud (VPC), ensuring strong security, controlled routing, and isolation of resources.
 
@@ -55,7 +54,7 @@ I implemented a **tiered network architecture** within a custom Virtual Private 
 
 # **⚙️ EC2 Bootstrap Script (User Data)**
 
-This automation script configures the EC2 server and deploys the web content automatically during instance launch:
+This is the automation script I used to configure the EC2 server and deploy the web content automatically during instance launch:
 
 ```bash
 #!/bin/bash
@@ -82,8 +81,6 @@ systemctl restart httpd
 ```
 
 This script eliminates manual configuration, ensures consistency, and accelerates deployments.
-
----                                               |
 
 ---
 
@@ -119,7 +116,6 @@ Route 53 routes traffic to ALB using alias records, and ACM provides the SSL cer
 
 * I hosted backend EC2 instances in **private subnets**
 * I only exposed the Load Balancer publicly
-* 
 * HTTPS enforced using ACM
 * Bastion host enables controlled SSH access
 * Security Groups restrict traffic to only required ports
@@ -130,7 +126,7 @@ Route 53 routes traffic to ALB using alias records, and ACM provides the SSL cer
 
 The final result is a:
 
-* **Secure** * **Scalable** * **Highly available** * **Cost-effective** * **Production-grade static website hosted on AWS.**
+* **Secure** **Scalable** **Highly available** **Cost-effective** * **Production-grade static website hosted on AWS.**
 
 This design can easily be adapted for larger applications or transitioned into a CI/CD workflow using CodePipeline, GitHub Actions, or Terraform automation.
 
