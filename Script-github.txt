@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Create an environment variable for the S3 zip file
+export S3_URI="s3://tboy3bucket1/jupiter.zip"                        
+
+# Update the packages on the EC2 instance
+yum update -y
+
+# Install Apache, unzip, and AWS CLI
+yum install -y httpd unzip awscli
+
+# Start Apache service
+systemctl enable httpd
+systemctl start httpd
+
+# Go to the Apache webroot
+cd /var/www/html
+
+# Clear default content
+rm -rf *
+
+# Download the zip file from S3
+aws s3 cp "$S3_URI" .
+
+# Unzip the file
+unzip jupiter.zip
+
+# Copy website files into the webroot
+cp -R jupiter/* .
+
+# Cleanup
+rm -rf jupiter jupiter.zip
+
+# Restart Apache
+systemctl restart httpd
