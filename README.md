@@ -1,7 +1,10 @@
-
-
+---
 # **Deploying a Secure & Scalable Static Website on AWS**
 
+![Alt text](Html-architecture.png)
+
+---
+# **Deploying a Secure & Scalable Static Website on AWS**
 ## **📌 Project Summary**
 
 In this project, I designed and deployed a **secure, scalable, and production-ready static website** on Amazon Web Services (AWS).
@@ -9,25 +12,8 @@ The solution reflects real-world DevOps practices by combining modern cloud infr
 
 This project demonstrates my ability to architect cloud solutions, automate deployments, and implement best practices across networking, compute, storage, DNS, security, and load balancing services.
 
----
 
-# **🎯 Goal of the Project**
-
-The primary objective was to build a complete AWS infrastructure capable of hosting a static website with:
-
-* **Multi-tier architecture**
-* **Private and public subnet isolation**
-* **Highly available load balancing**
-* **Automated scaling**
-* **Domain name system (DNS) integration**
-* **HTTPS encryption**
-* **Automated EC2 configuration using a bootstrap script**
-
-This setup mirrors what is commonly used in real-world production environments.
-
----
-
-# **🏗️ Architecture Overview**
+# ** Architecture Overview**
 
 I implemented a **tiered network architecture** within a custom Virtual Private Cloud (VPC), ensuring strong security, controlled routing, and isolation of resources.
 
@@ -66,12 +52,6 @@ I implemented a **tiered network architecture** within a custom Virtual Private 
 
 ---
 
-# **🖼️ Architecture Diagram**
-
-*(Insert your architecture diagram here)*
-This diagram represents how each AWS component interacts to form a resilient infrastructure.
-
----
 
 # **⚙️ EC2 Bootstrap Script (User Data)**
 
@@ -135,11 +115,11 @@ Route 53 routes traffic to ALB using alias records, and ACM provides the SSL cer
 
 ---
 
-# **🔐 Security Highlights**
+# **🔐 Some Security Measure I Took**
 
-* Backend EC2 instances are hosted in **private subnets**
-* Only the Load Balancer is exposed publicly
-* IAM roles ensure **no hardcoded credentials**
+* I hosted backend EC2 instances in **private subnets**
+* I only exposed the Load Balancer publicly
+* 
 * HTTPS enforced using ACM
 * Bastion host enables controlled SSH access
 * Security Groups restrict traffic to only required ports
@@ -154,7 +134,8 @@ The final result is a:
 
 This design can easily be adapted for larger applications or transitioned into a CI/CD workflow using CodePipeline, GitHub Actions, or Terraform automation.
 
----
+![Alt text](Project-Result.PNG)
+
 
 ---
 
