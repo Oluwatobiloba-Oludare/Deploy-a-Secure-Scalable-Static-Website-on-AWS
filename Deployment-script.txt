@@ -32,4 +32,5 @@ cp -R jupiter/* .
 rm -rf jupiter jupiter.zip
 
 # Restart Apache
+
 systemctl restart httpd
